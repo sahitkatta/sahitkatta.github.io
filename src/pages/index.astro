@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Sahit Katta">
+  <ul class="post-list">
+    {posts.map((post) => (
+      <li class="post-row">
+        <span class="date">
+          {post.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+        </span>
+        <div>
+          <a class="title" href={`/blog/${post.slug}/`}>{post.data.title}</a>
+          {post.data.description && <p class="description">{post.data.description}</p>}
+        </div>
+      </li>
+    ))}
+  </ul>
+</Layout>

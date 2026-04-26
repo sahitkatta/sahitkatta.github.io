@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About — Sahit Katta" description="About Sahit Katta — Founding Engineer at NuStudio AI and STEM Educator.">
+  <div class="about-header">
+    <img src="/headshot.png" alt="Sahit Katta" class="about-photo" />
+    <div>
+      <h1>Sahit Katta</h1>
+      <p class="about-role">Founding Engineer, <a href="https://nustudio.ai" target="_blank" rel="noopener">NuStudio AI</a> &middot; STEM Educator</p>
+      <p class="about-pitch">Writing about ML/AI, data, career, music, and the things I'm learning along the way.</p>
+      <div class="about-links">
+        <a href="https://www.linkedin.com/in/sahitkatta/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/sahitkatta" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://sahitkatta.medium.com" target="_blank" rel="noopener">Medium</a>
+        <a href="mailto:sahit.mohan@gmail.com">sahit.mohan@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    I'm a software engineer and STEM educator. I'm currently a Founding Engineer at
+    <a href="https://nustudio.ai" target="_blank" rel="noopener">NuStudio AI</a>,
+    where I work at the intersection of machine learning, product, and the hard problem of
+    building things that are actually useful.
+  </p>
+
+  <p>
+    Before that, I spent years teaching — explaining complex ideas to students who hadn't yet
+    decided whether they liked math or science. That experience shaped how I think about
+    communication, clarity, and what it means to genuinely help someone understand something.
+  </p>
+
+  <p>
+    I write to think in public — to be wrong out loud, learn from it, and hopefully give
+    someone else a useful foothold along the way.
+  </p>
+</Layout>
+
+<style>
+  .about-header {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+
+  .about-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+    object-position: center top;
+    flex-shrink: 0;
+  }
+
+  .about-header h1 {
+    margin: 0 0 0.25rem;
+  }
+
+  .about-role {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin: 0 0 0.5rem;
+  }
+
+  .about-pitch {
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    .about-header {
+      flex-direction: column;
+    }
+  }
+</style>

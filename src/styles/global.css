@@ -1,0 +1,336 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fafaf8;
+  --text: #1a1a1a;
+  --muted: #777;
+  --muted-2: #aaa;
+  --border: #e5e5e5;
+  --accent: #4f46e5;
+  --accent-hover: #3730a3;
+  --code-bg: #f4f4f4;
+  --pill-bg: #f0f0ee;
+  --pill-active-bg: #1a1a1a;
+  --pill-active-text: #fafaf8;
+}
+
+html.dark {
+  --bg: #111113;
+  --text: #e8e8e6;
+  --muted: #888;
+  --muted-2: #555;
+  --border: #2a2a2e;
+  --accent: #818cf8;
+  --accent-hover: #a5b4fc;
+  --code-bg: #1e1e22;
+  --pill-bg: #1e1e22;
+  --pill-active-bg: #e8e8e6;
+  --pill-active-text: #111113;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  transition: background 0.2s, color 0.2s;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+
+header a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+header a:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.header-right a {
+  font-size: 0.875rem;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.header-right a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.header-right a.active {
+  color: var(--text);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
+#theme-toggle:hover {
+  color: var(--text);
+}
+
+.icon-sun, .icon-moon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+html:not(.dark) .icon-moon { display: none; }
+html.dark .icon-sun { display: none; }
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.logo-link:hover {
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+.logo-name {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
+html:not(.dark) .logo-dark { display: none; }
+html.dark .logo-light { display: none; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.875rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+/* ─── Post list ─────────────────────────────── */
+
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 1.25rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.post-row .date {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-family: ui-monospace, monospace;
+  padding-top: 0.2rem;
+  white-space: nowrap;
+}
+
+.post-row .title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.post-row .title:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.post-row .description {
+  grid-column: 2;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  font-size: 0.925rem;
+}
+
+/* ─── Category pills ─────────────────────────── */
+
+.category-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.category-pill {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--pill-bg);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.category-pill:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.category-pill.active {
+  background: var(--pill-active-bg);
+  color: var(--pill-active-text);
+  border-color: var(--pill-active-bg);
+}
+
+/* ─── Article (blog post) ─────────────────────── */
+
+article h1 {
+  margin-bottom: 0.25rem;
+}
+
+article .meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-family: ui-monospace, monospace;
+  margin-bottom: 2rem;
+}
+
+article img {
+  max-width: 100%;
+}
+
+article pre {
+  overflow-x: auto;
+  padding: 1rem;
+  background: var(--code-bg);
+  border-radius: 4px;
+}
+
+article code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.9em;
+}
+
+article blockquote {
+  border-left: 3px solid var(--border);
+  margin-left: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+}
+
+/* ─── About page ─────────────────────────────── */
+
+.about-photo {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.about-links a {
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1px;
+}
+
+.about-links a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+  text-decoration: none;
+}
+
+/* ─── Mobile ─────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .post-row {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+
+  .post-row .description {
+    grid-column: 1;
+  }
+
+  .post-row .date {
+    font-size: 0.75rem;
+  }
+}
