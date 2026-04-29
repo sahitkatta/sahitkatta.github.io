@@ -83,10 +83,17 @@ header a:hover {
 }
 
 .header-right a {
+  display: flex;
+  align-items: center;
   font-size: 0.875rem;
   font-family: ui-sans-serif, system-ui, sans-serif;
   color: var(--muted);
   font-weight: 500;
+  line-height: 1;
+}
+
+.header-right a svg {
+  display: block;
 }
 
 .header-right a:hover {
@@ -321,6 +328,22 @@ article blockquote {
 /* ─── Mobile ─────────────────────────────────── */
 
 @media (max-width: 480px) {
+  main {
+    padding: 1.25rem 1rem;
+  }
+
+  header {
+    margin-bottom: 2rem;
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  .header-right {
+    gap: 0.875rem;
+  }
+
   .post-row {
     grid-template-columns: 1fr;
     gap: 0.1rem;

@@ -1,0 +1,19 @@
+Name: Sahit Katta
+Current Role: Software engineer, Founding Engineer at NuStudio AI | STEM Educator
+
+Linkedin: https://www.linkedin.com/in/sahitkatta/
+Website: https://sahitkatta.com
+Medium: sahitkatta.medium.com
+GitHub: https://github.com/sahitkatta
+mail: sahit.mohan@gmail.com
+
+###Categories pages
+- ML / AI
+- Data
+- Career
+- Personal
+- Music
+- Writing
+- STEM 
+
+
